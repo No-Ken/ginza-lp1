@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水光注射・注入治療 | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">水光注射・注入治療</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">ヒアルロン酸、ボツリヌストキシン、エクソソームなど、最新の注入治療で内側から輝く美肌へ。自然な仕上がりで若々しさを取り戻します。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">表情ジワが気になる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">ほうれい線を改善したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">肌の潤いがほしい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">小顔になりたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">唇にボリュームがほしい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">自然な若返りを希望</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <!-- Treatment Types -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">施術メニュー</h2>
+                    <div class="space-y-8">
+                        <!-- Skin Booster -->
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-brown">水光注射（スキンブースター）</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">特徴</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• 肌の浅い層に均一に注入</li>
+                                        <li>• 保湿成分を直接届ける</li>
+                                        <li>• 内側から潤いのある肌へ</li>
+                                        <li>• 細かいシワの改善</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">使用薬剤</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• ヒアルロン酸</li>
+                                        <li>• ビタミン</li>
+                                        <li>• アミノ酸</li>
+                                        <li>• 成長因子</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botulinum Toxin -->
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-brown">ボツリヌストキシン注射</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">効果のある部位</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• 額のシワ</li>
+                                        <li>• 眉間のシワ</li>
+                                        <li>• 目尻のシワ（カラスの足跡）</li>
+                                        <li>• エラ（小顔効果）</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">特徴</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• 表情ジワの改善</li>
+                                        <li>• 予防効果もあり</li>
+                                        <li>• 自然な仕上がり</li>
+                                        <li>• 効果は3-6ヶ月持続</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hyaluronic Acid -->
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-brown">ヒアルロン酸注入</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">適応部位</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• ほうれい線</li>
+                                        <li>• マリオネットライン</li>
+                                        <li>• 唇のボリュームアップ</li>
+                                        <li>• 涙袋形成</li>
+                                        <li>• 額・こめかみのボリューム</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">特徴</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• 即効性がある</li>
+                                        <li>• 自然な仕上がり</li>
+                                        <li>• 修正・追加が可能</li>
+                                        <li>• 6-12ヶ月持続</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exosome -->
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-brown">エクソソーム水光注射</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">特徴</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• 最新の再生医療技術</li>
+                                        <li>• 細胞レベルでの若返り</li>
+                                        <li>• 強力な抗炎症作用</li>
+                                        <li>• 肌質の根本改善</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">効果</h4>
+                                    <ul class="space-y-2 text-base text-gray-600">
+                                        <li>• コラーゲン生成促進</li>
+                                        <li>• 細胞の活性化</li>
+                                        <li>• 肌のハリ・弾力向上</li>
+                                        <li>• シワ・たるみの改善</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- First-time Special -->
+                    <div class="bg-accent bg-opacity-5 border-2 border-accent rounded-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <span class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">初回限定</span>
+                            <h2 class="text-3xl font-serif text-brown">特別価格</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー</th>
+                                        <th class="text-accent">初回特別価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>水光注射（ヒアルロン酸）</td>
+                                        <td class="text-2xl font-bold text-accent">¥11,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ボツリヌストキシン（額）</td>
+                                        <td class="text-2xl font-bold text-accent">¥15,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ボツリヌストキシン（眉間）</td>
+                                        <td class="text-2xl font-bold text-accent">¥12,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ボツリヌストキシン（目尻）</td>
+                                        <td class="text-2xl font-bold text-accent">¥12,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ヒアルロン酸（ほうれい線）</td>
+                                        <td class="text-2xl font-bold text-accent">¥35,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>エクソソーム水光注射</td>
+                                        <td class="text-2xl font-bold text-accent">¥25,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-serif text-brown text-center mb-8">通常料金</h3>
+                        
+                        <!-- Water Light Injection -->
+                        <h4 class="font-semibold mb-3">水光注射</h4>
+                        <table class="price-table mb-8">
+                            <thead>
+                                <tr>
+                                    <th>メニュー</th>
+                                    <th>料金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>水光注射（ヒアルロン酸）</td>
+                                    <td>¥25,000</td>
+                                </tr>
+                                <tr>
+                                    <td>エクソソーム水光注射</td>
+                                    <td>¥50,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- Botox -->
+                        <h4 class="font-semibold mb-3">ボツリヌストキシン注射</h4>
+                        <table class="price-table mb-8">
+                            <thead>
+                                <tr>
+                                    <th>部位</th>
+                                    <th>料金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>額</td>
+                                    <td>¥30,000</td>
+                                </tr>
+                                <tr>
+                                    <td>眉間</td>
+                                    <td>¥25,000</td>
+                                </tr>
+                                <tr>
+                                    <td>目尻</td>
+                                    <td>¥25,000</td>
+                                </tr>
+                                <tr>
+                                    <td>額・眉間・目尻セット</td>
+                                    <td>¥60,000</td>
+                                </tr>
+                                <tr>
+                                    <td>エラボトックス（両側）</td>
+                                    <td>¥50,000</td>
+                                </tr>
+                                <tr>
+                                    <td>肩ボトックス</td>
+                                    <td>¥80,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Hyaluronic Acid -->
+                        <h4 class="font-semibold mb-3">ヒアルロン酸注入</h4>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>部位</th>
+                                    <th>料金（1本）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ほうれい線</td>
+                                    <td>¥60,000</td>
+                                </tr>
+                                <tr>
+                                    <td>マリオネットライン</td>
+                                    <td>¥60,000</td>
+                                </tr>
+                                <tr>
+                                    <td>唇</td>
+                                    <td>¥60,000</td>
+                                </tr>
+                                <tr>
+                                    <td>涙袋</td>
+                                    <td>¥50,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Package Plans -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">お得なセットプラン</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <p class="text-center font-semibold mb-4">水光注射 5回コース</p>
+                            <p class="text-center text-2xl text-accent mb-2">¥100,000</p>
+                            <p class="text-sm text-gray-600 text-center">（通常価格より25,000円お得）</p>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です</p>
+                </div>
+
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

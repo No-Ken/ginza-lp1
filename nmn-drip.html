@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMN点滴 | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">NMN点滴</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">次世代のアンチエイジング治療。NAD+の前駆体であるNMNを直接体内に補充し、細胞レベルから若返りを促進します。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">慢性的な疲労感がある</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">肌のハリ・ツヤが欲しい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">若々しさを保ちたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">集中力・記憶力を高めたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">更年期症状を緩和したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">健康寿命を延ばしたい</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-2xl font-serif text-brown mb-6">NMN点滴の特徴</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">細胞レベルでの若返り</h3>
+                                    <p class="text-gray-600 text-sm">ミトコンドリア機能を活性化し、エネルギー産生を向上</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">長寿遺伝子の活性化</h3>
+                                    <p class="text-gray-600 text-sm">サーチュイン遺伝子を活性化し、老化を遅らせる</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">即効性と持続性</h3>
+                                    <p class="text-gray-600 text-sm">点滴後すぐに効果を実感、定期的な施術で持続</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">安全性の高さ</h3>
+                                    <p class="text-gray-600 text-sm">体内に元々存在する物質で副作用が少ない</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="images/laser_treatment.jpg" alt="NMN点滴施術" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Effects -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">期待できる効果</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">身体面の効果</h3>
+                            <ul class="space-y-2 text-base text-gray-600">
+                                <li>• 疲労回復・体力向上</li>
+                                <li>• 代謝の改善</li>
+                                <li>• 睡眠の質の向上</li>
+                                <li>• 免疫力の向上</li>
+                            </ul>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">美容面の効果</h3>
+                            <ul class="space-y-2 text-base text-gray-600">
+                                <li>• 肌のハリ・ツヤの改善</li>
+                                <li>• シワ・たるみの軽減</li>
+                                <li>• 髪質の改善</li>
+                                <li>• 爪の強化</li>
+                            </ul>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">脳機能の効果</h3>
+                            <ul class="space-y-2 text-base text-gray-600">
+                                <li>• 集中力の向上</li>
+                                <li>• 記憶力の改善</li>
+                                <li>• 思考の明瞭化</li>
+                                <li>• ストレス耐性の向上</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- First-time Special -->
+                    <div class="bg-accent bg-opacity-5 border-2 border-accent rounded-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <span class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">初回限定</span>
+                            <h2 class="text-3xl font-serif text-brown">特別価格</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー</th>
+                                        <th class="text-accent">初回特別価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NMN点滴 100mg</td>
+                                        <td class="text-2xl font-bold text-accent">¥33,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NMN点滴 200mg</td>
+                                        <td class="text-2xl font-bold text-accent">¥55,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NMN点滴 300mg</td>
+                                        <td class="text-2xl font-bold text-accent">¥77,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-serif text-brown text-center mb-8">通常料金</h3>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>メニュー</th>
+                                    <th>通常価格</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>NMN点滴 100mg</td>
+                                    <td>¥44,000</td>
+                                </tr>
+                                <tr>
+                                    <td>NMN点滴 200mg</td>
+                                    <td>¥77,000</td>
+                                </tr>
+                                <tr>
+                                    <td>NMN点滴 300mg</td>
+                                    <td>¥110,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Package Plans -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">定期コース（月額制）</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>コース</th>
+                                        <th>月額料金</th>
+                                        <th>特典</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>月1回コース（100mg）</td>
+                                        <td>¥38,500</td>
+                                        <td>12.5%OFF</td>
+                                    </tr>
+                                    <tr>
+                                        <td>月2回コース（100mg×2）</td>
+                                        <td>¥74,800</td>
+                                        <td>15%OFF</td>
+                                    </tr>
+                                    <tr>
+                                        <td>月1回コース（200mg）</td>
+                                        <td>¥66,000</td>
+                                        <td>14%OFF</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-base text-gray-600 text-center mt-4">※3ヶ月以上の継続が条件となります</p>
+                        </div>
+                    </div>
+
+                    <!-- Combination Menu -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">組み合わせメニュー</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー</th>
+                                        <th>料金</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NMN点滴 + 高濃度ビタミンC点滴</td>
+                                        <td>¥55,000〜</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NMN点滴 + プラセンタ注射</td>
+                                        <td>¥48,000〜</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NMN点滴 + エクソソーム点滴</td>
+                                        <td>¥88,000〜</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です</p>
+                </div>
+
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

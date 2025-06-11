@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エクソソーム | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">エクソソーム</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">最先端の再生医療技術。細胞間の情報伝達物質であるエクソソームを活用し、肌の再生・若返りを細胞レベルから実現します。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">肌の老化が気になる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">最先端の治療を受けたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">根本的な若返りを希望</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">ニキビ跡を改善したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">全身のアンチエイジング</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">薄毛・抜け毛で悩んでいる</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-2xl font-serif text-brown mb-6">エクソソームとは</h2>
+                        <p class="text-gray-600 mb-6">エクソソームは、細胞から分泌される直径30〜150nmの小さな膜小胞で、細胞間の情報伝達を担う重要な物質です。成長因子、サイトカイン、マイクロRNAなど、細胞の修復・再生に必要な情報を含んでいます。</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 text-brown">主な効果</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold mb-1">細胞の再生・修復</h4>
+                                    <p class="text-gray-600 text-sm">損傷した細胞を修復し、新しい細胞の生成を促進</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold mb-1">コラーゲン産生促進</h4>
+                                    <p class="text-gray-600 text-sm">線維芽細胞を活性化し、コラーゲン・エラスチンを増加</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold mb-1">抗炎症作用</h4>
+                                    <p class="text-gray-600 text-sm">炎症を抑え、肌トラブルの改善・予防</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold mb-1">血管新生促進</h4>
+                                    <p class="text-gray-600 text-sm">新しい血管を作り、組織への栄養供給を改善</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="images/skin_booster.jpg" alt="エクソソーム施術" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Treatment Methods -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">施術方法</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">エクソソーム点滴</h3>
+                            <p class="text-gray-600 text-sm mb-4">静脈内に直接投与し、全身の細胞活性化を促進</p>
+                            <ul class="text-base text-gray-600 space-y-1">
+                                <li>• 全身のアンチエイジング</li>
+                                <li>• 疲労回復</li>
+                                <li>• 免疫力向上</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">エクソソーム水光注射</h3>
+                            <p class="text-gray-600 text-sm mb-4">肌の浅い層に均一に注入し、肌質改善</p>
+                            <ul class="text-base text-gray-600 space-y-1">
+                                <li>• 肌のハリ・ツヤ改善</li>
+                                <li>• 小じわの軽減</li>
+                                <li>• 毛穴の引き締め</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold mb-3 text-brown">ダーマペン＋エクソソーム</h3>
+                            <p class="text-gray-600 text-sm mb-4">ダーマペンで微細な穴を開け、エクソソームを浸透</p>
+                            <ul class="text-base text-gray-600 space-y-1">
+                                <li>• ニキビ跡の改善</li>
+                                <li>• 毛穴の改善</li>
+                                <li>• 肌質の根本改善</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- First-time Special for Water Injection -->
+                    <div class="bg-accent bg-opacity-5 border-2 border-accent rounded-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <span class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">初回限定</span>
+                            <h2 class="text-3xl font-serif text-brown">特別価格</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー</th>
+                                        <th class="text-accent">初回特別価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>エクソソーム水光注射</td>
+                                        <td class="text-2xl font-bold text-accent">¥25,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-base text-gray-600 text-center mt-2">※通常価格：¥55,000</p>
+                        </div>
+                    </div>
+
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-serif text-brown text-center mb-8">通常料金</h3>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>メニュー</th>
+                                    <th>単回</th>
+                                    <th>3回コース</th>
+                                    <th>5回コース</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>エクソソーム点滴（5億個）</td>
+                                    <td>¥66,000</td>
+                                    <td>¥178,200</td>
+                                    <td>¥264,000</td>
+                                </tr>
+                                <tr>
+                                    <td>エクソソーム点滴（10億個）</td>
+                                    <td>¥110,000</td>
+                                    <td>¥297,000</td>
+                                    <td>¥440,000</td>
+                                </tr>
+                                <tr>
+                                    <td>エクソソーム水光注射</td>
+                                    <td>¥55,000</td>
+                                    <td>¥148,500</td>
+                                    <td>¥220,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ダーマペン＋エクソソーム</td>
+                                    <td>¥85,000</td>
+                                    <td>¥229,500</td>
+                                    <td>¥340,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Combination Menu -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">コンビネーション治療</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-2">トータルエイジングケア</h4>
+                                    <p class="text-base text-gray-600 mb-2">エクソソーム点滴＋水光注射</p>
+                                    <p class="text-xl text-accent font-bold">¥110,000〜</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">肌質改善スペシャル</h4>
+                                    <p class="text-base text-gray-600 mb-2">ダーマペン＋エクソソーム＋マスク</p>
+                                    <p class="text-xl text-accent font-bold">¥88,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です</p>
+                </div>
+
+                <!-- Expected Results -->
+                <div class="mt-16">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">期待できる効果</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">シワ・たるみの改善</p>
+                        </div>
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">肌のハリ・弾力向上</p>
+                        </div>
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">毛穴の引き締め</p>
+                        </div>
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">ニキビ跡の改善</p>
+                        </div>
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">肌のトーンアップ</p>
+                        </div>
+                        <div class="bg-sub p-4 rounded-lg text-center">
+                            <p class="text-gray-700">薄毛・抜け毛の改善</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

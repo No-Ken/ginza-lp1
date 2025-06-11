@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Price Modal</title>
+    <script>
+        // デバッグ用スクリプト
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('=== Price Modal Debug ===');
+            
+            // 1. モーダル要素の存在確認
+            const modal = document.getElementById('priceModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const closeBtn = document.getElementById('closeModal');
+            
+            console.log('Modal elements:', {
+                modal: !!modal,
+                modalTitle: !!modalTitle,
+                modalContent: !!modalContent,
+                closeBtn: !!closeBtn
+            });
+            
+            // 2. data-price-modal属性を持つ要素の確認
+            const priceLinks = document.querySelectorAll('[data-price-modal]');
+            console.log('Price links found:', priceLinks.length);
+            
+            priceLinks.forEach((link, index) => {
+                console.log(`Link ${index}:`, {
+                    text: link.textContent.trim(),
+                    dataValue: link.getAttribute('data-price-modal'),
+                    href: link.getAttribute('href'),
+                    classes: link.className
+                });
+            });
+            
+            // 3. インラインスクリプトの確認
+            const scripts = document.querySelectorAll('script');
+            console.log('Scripts found:', scripts.length);
+            
+            // 4. グローバル関数の確認
+            setTimeout(() => {
+                console.log('Global functions:', {
+                    showPriceModal: typeof window.showPriceModal,
+                    closePriceModal: typeof window.closePriceModal,
+                    priceData: typeof window.priceData
+                });
+            }, 500);
+            
+            // 5. テストクリック
+            setTimeout(() => {
+                console.log('=== Test Click ===');
+                if (priceLinks[0]) {
+                    // シミュレートクリック
+                    const event = new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window
+                    });
+                    priceLinks[0].dispatchEvent(event);
+                }
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1>Price Modal Debug</h1>
+    <p>コンソールを開いてデバッグ情報を確認してください。</p>
+    <iframe src="re;anne_lp_ver1.html" width="100%" height="800" style="border: 1px solid #ccc;"></iframe>
+</body>
+</html>

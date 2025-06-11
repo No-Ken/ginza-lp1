@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>モーダルテスト</title>
+    <style>
+        .test-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background: #b8a398;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .test-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>価格モーダルテスト</h1>
+    
+    <button class="test-button" onclick="testModal('脱毛')">脱毛の料金を表示</button>
+    <button class="test-button" onclick="testModal('ハイフ')">ハイフの料金を表示</button>
+    <button class="test-button" onclick="testModal('ダーマペン')">ダーマペンの料金を表示</button>
+    
+    <hr>
+    
+    <h2>コンソールでのテスト方法：</h2>
+    <ol>
+        <li>F12でコンソールを開く</li>
+        <li>以下のコマンドを実行：
+            <ul>
+                <li><code>openModal('脱毛')</code> - インラインスクリプトの関数</li>
+                <li><code>showPriceModal('脱毛')</code> - main.jsの関数</li>
+                <li><code>document.querySelector('[data-price-modal]').click()</code> - 直接クリック</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <script>
+        function testModal(type) {
+            console.log('Testing modal for:', type);
+            
+            // Try inline script function first
+            if (typeof window.openModal === 'function') {
+                console.log('Using openModal function');
+                window.openModal(type);
+            } 
+            // Try main.js function
+            else if (typeof window.showPriceModal === 'function') {
+                console.log('Using showPriceModal function');
+                window.showPriceModal(type);
+            } 
+            else {
+                console.error('No modal function found!');
+            }
+        }
+        
+        // Check what's available after page load
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                console.log('Available functions:', {
+                    openModal: typeof window.openModal,
+                    showPriceModal: typeof window.showPriceModal,
+                    priceData: typeof window.priceData
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

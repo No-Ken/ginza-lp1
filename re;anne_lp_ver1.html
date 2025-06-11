@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re:anne Clinic | 銀座の高級美容クリニック</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Inline Tailwind Config -->
+    <style>
+        /* Tailwind カスタムクラスのオーバーライド */
+        .btn {
+            @apply px-8 py-3 rounded-full transition-all duration-300;
+        }
+        
+        .btn-primary {
+            @apply bg-accent text-white shadow-md hover:bg-opacity-90 hover:shadow-lg;
+        }
+        
+        .btn-secondary {
+            @apply border border-accent text-accent hover:bg-accent hover:text-white;
+        }
+
+        .section-title {
+            @apply text-2xl md:text-3xl font-serif text-center mb-4;
+        }
+        
+        .section-subtitle {
+            @apply text-center text-gray-600 mb-12;
+        }
+        
+        .card {
+            @apply bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+        }
+
+        .btn-outline-sm {
+            @apply block w-full text-center mt-4 px-4 py-2 rounded-lg border border-accent text-accent text-sm font-semibold transition-all duration-200 hover:bg-accent hover:text-white;
+        }
+        
+        /* --- Button Animations --- */
+        .btn:active, .btn-outline-sm:active {
+            @apply transform scale-95 brightness-90;
+        }
+
+        #closeModal {
+            @apply transition-all duration-150;
+        }
+        #closeModal:active {
+            @apply transform scale-90 brightness-90;
+        }
+
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== Hero Section ===== -->
+        <section id="hero" class="h-screen min-h-[600px] flex items-center relative pt-20">
+            <div id="hero-background" class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 opacity-90 transition-all duration-500" style="background-image: url('images/main_hero.jpg');"></div>
+            <div id="hero-overlay" class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 transition-opacity duration-500"></div>
+            <div id="hero-content" class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 transition-opacity duration-500">
+                <div class="max-w-xl">
+                    <h1 class="text-3xl md:text-5xl font-serif text-brown leading-tight mb-6">
+                        洗練された美しさを、<br>あなたに。
+                    </h1>
+                    <p class="text-gray-700 text-sm md:text-base mb-8 leading-relaxed">
+                        Re：anne clinic 銀座では、美容皮膚科専門医が最新の医療機器と技術で、<br>
+                        あなたの肌と身体の悩みに総合的なソリューションを提供します。
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary text-center">今すぐ予約する</a>
+                        <a href="#menu" class="btn btn-secondary text-center">施術一覧を見る</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Original Button (hidden by default) -->
+            <div id="back-to-original" class="absolute top-4 right-4 z-30 opacity-0 pointer-events-none transition-all duration-300">
+                <button onclick="resetHeroSection()" class="bg-white/80 hover:bg-white text-brown px-4 py-2 rounded-lg shadow-lg text-sm font-medium transition-all">
+                    元に戻す
+                </button>
+            </div>
+            
+            <!-- Campaign Images Scroll Section - Bottom of Hero -->
+            <div class="absolute bottom-24 left-0 right-0 z-30">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-3">
+                        <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold">期間限定キャンペーン</span>
+                    </div>
+                    <div class="flex overflow-x-auto space-x-3 pb-4 hide-scrollbar">
+                        <!-- Campaign Image 1 -->
+                        <div class="flex-shrink-0 w-56 md:w-72">
+                            <img src="images/campaign_1.jpg" alt="キャンペーン1" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_1.jpg')">
+                        </div>
+                        <!-- Campaign Image 2 -->
+                        <div class="flex-shrink-0 w-56 md:w-72">
+                            <img src="images/campaign_2.jpg" alt="キャンペーン2" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_2.jpg')">
+                        </div>
+                        <!-- Campaign Image 3 -->
+                        <div class="flex-shrink-0 w-56 md:w-72">
+                            <img src="images/campaign_3.jpg" alt="キャンペーン3" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_3.jpg')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====施術カテゴリーセクション (Treatment Menu) - 横スクロールに変更 ===== -->
+        <section id="menu" class="py-16 md:py-20 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-brown">施術メニュー</h2>
+                <p class="section-subtitle">最新の美容医療から、あなたに最適な施術をご提案します。</p>
+                
+                <div class="relative">
+                    <!-- 横スクロールコンテナ -->
+                    <div id="scroll-container" class="flex overflow-x-auto space-x-8 pb-4 hide-scrollbar">
+                        <!-- Card 1 -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/176797_m.jpg" alt="レーザー治療" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">レーザー治療</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">シミ・そばかす・肝斑の改善、肌質改善・美白効果。</p>
+                                <a href="laser-treatment.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/176807_m.jpg" alt="ハイフ" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">ハイフ（HIFU）</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">顔のたるみ・リフトアップ、小顔効果、コラーゲン生成促進。</p>
+                                <a href="hifu.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/23_医療脱毛.jpg" alt="医療脱毛" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">医療脱毛</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">最新の医療レーザー脱毛機器で安全で効果的な永久脱毛。</p>
+                                <a href="medical-hair-removal.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/26_ダーマペン.jpg" alt="ダーマペン4" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">ダーマペン4</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">ニキビ跡・毛穴の改善、最新世代のマイクロニードリング治療。</p>
+                                <a href="dermapen.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 5: ピーリング -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/24_ピーリング.jpg" alt="ピーリング" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">ピーリング</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">ハイドラフェイシャル、マッサージピールで美しい素肌へ。</p>
+                                <a href="peeling.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Card 6: 注入治療 -->
+                        <div class="card flex-shrink-0 w-[320px] md:w-[350px]">
+                            <img src="images/32128377_m.jpg" alt="注入治療" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-serif font-semibold mb-2 text-brown">注入治療</h3>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">ボツリヌストキシン、水光注射で自然な若々しさと美肌へ。</p>
+                                <a href="injection.html" class="text-sm font-medium text-accent hover:text-brown transition">詳しく見る &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="scroll-left" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-white/80 rounded-full p-2 shadow-lg hover:bg-accent hover:text-white transition hidden md:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="scroll-right" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-white/80 rounded-full p-2 shadow-lg hover:bg-accent hover:text-white transition hidden md:block">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== お悩みから探すセクション (Search by Concern) ===== -->
+        <section id="concerns" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-brown">お悩みから探す</h2>
+                <p class="section-subtitle">あなたの肌や体のお悩みに合わせて、最適な施術をご提案します。</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                    <!-- Concern 1: シミ・そばかす -->
+                    <a href="laser-treatment.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="9" r="1.5"/><circle cx="16" cy="9" r="1.5"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/><circle cx="12" cy="12" r="0.5"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">シミ・そばかす</span>
+                    </a>
+                    <!-- Concern 2: しわ・たるみ -->
+                    <a href="hifu.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">しわ・たるみ</span>
+                    </a>
+                    <!-- Concern 3: 毛穴・ニキビ跡 -->
+                    <a href="dermapen.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="10" r="2"/><circle cx="16" cy="10" r="2"/><circle cx="12" cy="16" r="2"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">毛穴・ニキビ跡</span>
+                    </a>
+                    <!-- Concern 4: くすみ・色素沈着 -->
+                    <a href="peeling.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">くすみ・色素沈着</span>
+                    </a>
+                     <!-- Concern 5: 小顔・リフトアップ -->
+                     <a href="hifu.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M12 2C8 2 5 5 5 9c0 5.5 3.5 11.5 7 13 3.5-1.5 7-7.5 7-13 0-4-3-7-7-7z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">小顔・リフトアップ</span>
+                    </a>
+                    <!-- Concern 6: 脱毛・ムダ毛 -->
+                    <a href="medical-hair-removal.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">脱毛・ムダ毛</span>
+                    </a>
+                    <!-- Concern 7: 肌質改善 -->
+                     <a href="exosome.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M3 3h7l3.5 7L20 3h1v18h-1l-6.5-7L7 21H3V3z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">肌質改善</span>
+                    </a>
+                    <!-- Concern 8: エイジングケア -->
+                    <a href="nmn-drip.html" class="group block p-5 bg-sub rounded-md hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 mx-auto mb-3 text-accent transition-colors"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="9"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                        <span class="font-medium text-gray-700 group-hover:text-accent text-sm transition-colors">エイジングケア</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== クリニックの特徴セクション (Features) ===== -->
+        <section id="features" class="py-16 md:py-20 bg-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-brown">Re：anne clinic 銀座が選ばれる理由</h2>
+                <p class="section-subtitle">私たちが大切にしている3つのこだわりをご紹介します。</p>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- Feature 1 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-accent"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-2 text-brown">美容皮膚科専門医による施術</h3>
+                        <p class="text-gray-600">美容皮膚科専門医が院長を務め、一人ひとりの悩みに対して専門的な知識で対応します。</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-accent"><path d="m12 15 2 5L9 9l5-2-7 7Z"/><path d="M9.5 2.5 14.5 6l-2 5L18 8.5l-2.5 5.5"/></svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-2 text-brown">最新の医療機器と技術</h3>
+                        <p class="text-gray-600">効果と安全性が証明された、最新の医療機器と技術を導入しています。</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-accent"><path d="m16 2-2.2 2.2m-2.8 0L9 2m7 14-1.8 1.8M12 22l-2-2m-4-11.8L4.2 6.2m0 11.6L6 19.8M2 12l2.2-2.2m14 0L22 12l-2.2 2.2M12 6l2 2m-4 7.8L6.2 16M18 6l2.2-2.2M6 6l-1.8-1.8M12 2v4"/><circle cx="12" cy="12" r="4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-2 text-brown">総合的なソリューション</h3>
+                        <p class="text-gray-600">肌と身体の悩みに対する総合的なソリューションを提供します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 料金セクション (Pricing) ===== -->
+        <section id="pricing" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-brown">料金プラン</h2>
+                <p class="section-subtitle">初回限定の特別価格をご用意しております。</p>
+                
+                <!-- 初回限定料金 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-serif text-center mb-8 text-brown">初回限定価格</h3>
+                    
+                    <!-- 人気・注目の施術 -->
+                    <div class="mb-8">
+                        <p class="text-center text-sm text-gray-600 mb-6">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-accent bg-opacity-10 text-accent text-sm font-medium">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                人気の施術
+                            </span>
+                        </p>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="card p-6 relative overflow-hidden">
+                                <h4 class="font-bold text-lg mb-2">医療脱毛</h4>
+                                <p class="text-gray-600 text-sm mb-3">全身＋顔＋VIO</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥50,000</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥69,000</p>
+                                <div class="text-right">
+                                    <a href="medical-hair-removal.html" class="text-sm text-accent underline hover:text-brown transition-colors">他の脱毛メニューを確認 →</a>
+                                </div>
+                            </div>
+                            <div class="card p-6 relative overflow-hidden">
+                                <h4 class="font-bold text-lg mb-2">ハイフ（HIFU）</h4>
+                                <p class="text-gray-600 text-sm mb-3">両頬＋顎下（400ショット）</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥29,800</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥50,000</p>
+                                <div class="text-right">
+                                    <a href="hifu.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のハイフメニューを確認 →</a>
+                                </div>
+                            </div>
+                            <div class="card p-6 relative overflow-hidden">
+                                <h4 class="font-bold text-lg mb-2">エクソソーム水光注射</h4>
+                                <p class="text-gray-600 text-sm mb-3">最先端の再生医療</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥25,000</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥55,000</p>
+                                <div class="text-right">
+                                    <a href="exosome.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のエクソソームメニューを確認 →</a>
+                                </div>
+                            </div>
+                            <div class="card p-6">
+                                <h4 class="font-bold text-lg mb-2">ダーマペン4</h4>
+                                <p class="text-gray-600 text-sm mb-3">全顔施術</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥11,000</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥25,000</p>
+                                <div class="text-right">
+                                    <a href="dermapen.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のダーマペンメニューを確認 →</a>
+                                </div>
+                            </div>
+                            <div class="card p-6">
+                                <h4 class="font-bold text-lg mb-2">ハイドラフェイシャル</h4>
+                                <p class="text-gray-600 text-sm mb-3">全顔施術</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥10,000</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥25,000</p>
+                                <div class="text-right">
+                                    <a href="peeling.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のピーリングメニューを確認 →</a>
+                                </div>
+                            </div>
+                            <div class="card p-6">
+                                <h4 class="font-bold text-lg mb-2">ボツリヌストキシン</h4>
+                                <p class="text-gray-600 text-sm mb-3">ボツラックス1部位</p>
+                                <p class="text-3xl font-bold text-accent mb-1">¥4,500</p>
+                                <p class="text-sm text-gray-500 mb-3">※通常¥9,000</p>
+                                <div class="text-right">
+                                    <a href="injection.html" class="text-sm text-accent underline hover:text-brown transition-colors">他の注入治療メニューを確認 →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- その他の施術（折りたたみ） -->
+                    <div class="mt-8">
+                        <button onclick="toggleMorePrices()" class="mx-auto flex items-center text-accent hover:text-brown transition-colors font-medium">
+                            <span id="morePricesText">その他の初回限定価格を見る</span>
+                            <svg id="morePricesIcon" class="w-5 h-5 ml-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        
+                        <div id="morePricesSection" class="hidden mt-6">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">レーザーシャワー</h4>
+                                    <p class="text-gray-600 text-sm mb-3">全顔施術</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥9,800</p>
+                                    <p class="text-sm text-gray-500 mb-3">※通常¥20,000</p>
+                                    <div class="text-right">
+                                        <a href="laser-treatment.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のレーザー治療メニューを確認 →</a>
+                                    </div>
+                                </div>
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">水光注射</h4>
+                                    <p class="text-gray-600 text-sm mb-3">マルチビタミン</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥11,000</p>
+                                    <p class="text-sm text-gray-500 mb-3">※通常¥22,000</p>
+                                    <div class="text-right">
+                                        <a href="injection.html" class="text-sm text-accent underline hover:text-brown transition-colors">他の注入治療メニューを確認 →</a>
+                                    </div>
+                                </div>
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">マッサージピール</h4>
+                                    <p class="text-gray-600 text-sm mb-3">PRX-T33</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥6,000</p>
+                                    <p class="text-sm text-gray-500 mb-3">※通常¥18,000</p>
+                                    <div class="text-right">
+                                        <a href="peeling.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のピーリングメニューを確認 →</a>
+                                    </div>
+                                </div>
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">フラクショナルレーザー</h4>
+                                    <p class="text-gray-600 text-sm mb-3">全顔施術</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥12,000</p>
+                                    <p class="text-sm text-gray-500 mb-3">※通常¥30,000</p>
+                                    <div class="text-right">
+                                        <a href="co2-laser.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のレーザー治療メニューを確認 →</a>
+                                    </div>
+                                </div>
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">美容点滴</h4>
+                                    <p class="text-gray-600 text-sm mb-3">選べる点滴</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥4,400</p>
+                                    <p class="text-sm text-gray-500 mb-3">※通常¥8,800</p>
+                                    <div class="text-right">
+                                        <a href="beauty-injection-drip.html" class="text-sm text-accent underline hover:text-brown transition-colors">他の美容点滴メニューを確認 →</a>
+                                    </div>
+                                </div>
+                                <div class="card p-6">
+                                    <h4 class="font-bold text-lg mb-2">医療用ピアス</h4>
+                                    <p class="text-gray-600 text-sm mb-3">片耳たぶ</p>
+                                    <p class="text-3xl font-bold text-accent mb-1">¥3,000</p>
+                                    <p class="text-sm text-gray-500 mb-3">※ピアス代別途</p>
+                                    <div class="text-right">
+                                        <a href="piercing.html" class="text-sm text-accent underline hover:text-brown transition-colors">他のピアスメニューを確認 →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-gray-600 mb-6">※すべて税込価格です。詳しい料金表はカウンセリング時にご案内いたします。</p>
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== アクセスセクション (Access) ===== -->
+        <section id="access" class="py-20 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-brown">アクセス</h2>
+                <p class="section-subtitle">銀座駅・新橋駅から徒歩圏内の好立地です。</p>
+                
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <!-- 地図 -->
+                    <div class="h-[400px] rounded-lg overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.0251!2d139.7658102!3d35.6707423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be741234567%3A0x1234567890abcdef!2z44CSMTA0LTAwNjEg5p2x5Lqs6YO95Lit5aSu5Yy66ZO65bqn77yY5LiB55uu77yY4oiS77yR!5e0!3m2!1sja!2sjp!4v1701234567890!5m2!1sja!2sjp"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <!-- アクセス情報 -->
+                    <div>
+                        <h3 class="text-2xl font-serif mb-6 text-brown">Re：anne clinic 銀座</h3>
+                        <dl class="space-y-4">
+                            <div>
+                                <dt class="font-bold text-gray-700 mb-1">住所</dt>
+                                <dd class="text-gray-600">〒104-0061<br>東京都中央区銀座8丁目8-1 第7セントラルビル5階</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-gray-700 mb-1">電話番号</dt>
+                                <dd class="text-gray-600">0120-666-465</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-gray-700 mb-1">営業時間</dt>
+                                <dd class="text-gray-600">10:00〜19:00</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-gray-700 mb-1">定休日</dt>
+                                <dd class="text-gray-600">月曜日・水曜日（年末年始を除く）</dd>
+                            </div>
+                            <div>
+                                <dt class="font-bold text-gray-700 mb-1">アクセス</dt>
+                                <dd class="text-gray-600">
+                                    ・銀座駅から徒歩5分<br>
+                                    ・新橋駅から徒歩4分
+                                </dd>
+                            </div>
+                        </dl>
+                        <div class="mt-6">
+                            <a href="https://www.re-anne.jp/" target="_blank" class="btn btn-secondary">公式サイトを見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Info -->
+                <div class="md:col-span-1">
+                    <h4 class="text-2xl font-serif font-bold text-brown mb-4">Re：anne clinic 銀座</h4>
+                    <p class="text-gray-500 text-sm">
+                        〒104-0061 東京都中央区銀座8丁目8-1<br>
+                        第7セントラルビル5階<br>
+                        TEL: 0120-666-465
+                    </p>
+                </div>
+                
+                <!-- Site Map -->
+                <div class="md:col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h5 class="font-bold text-gray-700 mb-3">施術メニュー</h5>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="#" class="hover:text-brown">レーザー治療</a></li>
+                            <li><a href="#" class="hover:text-brown">注入治療</a></li>
+                            <li><a href="#" class="hover:text-brown">医療脱毛</a></li>
+                            <li><a href="#" class="hover:text-brown">その他</a></li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h5 class="font-bold text-gray-700 mb-3">お悩みから探す</h5>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="#" class="hover:text-brown">シミ・しわ</a></li>
+                            <li><a href="#" class="hover:text-brown">たるみ・小顔</a></li>
+                            <li><a href="#" class="hover:text-brown">ニキビ跡</a></li>
+                            <li><a href="#" class="hover:text-brown">医療痩身</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-700 mb-3">クリニック情報</h5>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="#" class="hover:text-brown">クリニック紹介</a></li>
+                            <li><a href="#" class="hover:text-brown">医師紹介</a></li>
+                            <li><a href="#" class="hover:text-brown">料金一覧</a></li>
+                            <li><a href="#" class="hover:text-brown">アクセス</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-gray-700 mb-3">その他</h5>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><a href="#" class="hover:text-brown">お知らせ</a></li>
+                            <li><a href="#" class="hover:text-brown">お問い合わせ</a></li>
+                            <li><a href="#" class="hover:text-brown">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t border-gray-200 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <div class="flex space-x-4 mb-4 sm:mb-0">
+                    <!-- Social Media Icons -->
+                    <a href="#" class="text-gray-400 hover:text-brown"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-brown"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 013.45 3.515c.636-.247 1.363-.416 2.427-.465C6.9 2.013 7.246 2 8.5 2h3.815zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6zm6.5-9.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd"></path></svg></a>
+                </div>
+                <p class="text-sm text-gray-500">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+    
+            // Header scroll effect
+            const header = document.getElementById('main-header');
+            if (header) {
+                // スクロール時にヘッダーに影をつけるためのスタイル定義がCSSになかったため、動的に追加
+                const style = document.createElement('style');
+                style.textContent = `
+                    #main-header.scrolled {
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                        border-bottom-color: transparent;
+                        background-color: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(8px);
+                    }
+                `;
+                document.head.appendChild(style);
+    
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+    
+            // Campaign Hero Background Switch Functions
+            window.switchHeroBackground = function(imagePath) {
+                const heroBackground = document.getElementById('hero-background');
+                const heroOverlay = document.getElementById('hero-overlay');
+                const heroContent = document.getElementById('hero-content');
+                const backButton = document.getElementById('back-to-original');
+                
+                if (heroBackground && heroOverlay && heroContent && backButton) {
+                    // Change background image with contain sizing
+                    heroBackground.style.backgroundImage = `url('${imagePath}')`;
+                    heroBackground.style.backgroundSize = 'contain';
+                    heroBackground.style.backgroundRepeat = 'no-repeat';
+                    heroBackground.style.backgroundPosition = 'center';
+                    
+                    // Hide overlay and content
+                    heroOverlay.style.opacity = '0';
+                    heroContent.style.opacity = '0';
+                    heroContent.style.pointerEvents = 'none';
+                    
+                    // Show back button
+                    backButton.style.opacity = '1';
+                    backButton.style.pointerEvents = 'auto';
+                }
+            };
+            
+            window.resetHeroSection = function() {
+                const heroBackground = document.getElementById('hero-background');
+                const heroOverlay = document.getElementById('hero-overlay');
+                const heroContent = document.getElementById('hero-content');
+                const backButton = document.getElementById('back-to-original');
+                
+                if (heroBackground && heroOverlay && heroContent && backButton) {
+                    // Reset to original background with cover sizing
+                    heroBackground.style.backgroundImage = "url('images/main_hero.jpg')";
+                    heroBackground.style.backgroundSize = 'cover';
+                    heroBackground.style.backgroundRepeat = 'no-repeat';
+                    heroBackground.style.backgroundPosition = 'center';
+                    
+                    // Show overlay and content
+                    heroOverlay.style.opacity = '1';
+                    heroContent.style.opacity = '1';
+                    heroContent.style.pointerEvents = 'auto';
+                    
+                    // Hide back button
+                    backButton.style.opacity = '0';
+                    backButton.style.pointerEvents = 'none';
+                }
+            };
+    
+            // 横スクロールボタンのJavaScript
+            const scrollContainer = document.getElementById('scroll-container');
+            const scrollLeftButton = document.getElementById('scroll-left');
+            const scrollRightButton = document.getElementById('scroll-right');
+    
+            if (scrollContainer && scrollLeftButton && scrollRightButton) {
+                const scrollAmount = 350;
+    
+                scrollLeftButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+    
+                scrollRightButton.addEventListener('click', () => {
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+    
+            // --- Popup Logic ---
+            const popupWrapper = document.getElementById('pricePopup');
+            const popupTitle = document.getElementById('popupTitle');
+            const popupContent = document.getElementById('popupContent');
+            const closePopup = document.getElementById('closePopup');
+            const priceButtons = document.querySelectorAll('[data-price-modal]');
+    
+            // 料金データ
+            const priceData = {
+                '脱毛': {
+                    title: '医療脱毛の料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全身＋顔＋VIO (初回)</p><p class="text-xl font-bold text-accent">¥50,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全身＋顔＋VIO (5回コース)</p><p class="text-lg text-gray-700">¥350,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全身のみ (初回)</p><p class="text-xl font-bold text-accent">¥40,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">VIOのみ (初回)</p><p class="text-lg text-gray-700">¥15,000</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                },
+                'ハイフ': {
+                    title: 'ハイフ（HIFU）の料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">両頬＋顎下 (400ショット) (初回)</p><p class="text-xl font-bold text-accent">¥29,800</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">両頬＋顎下 (400ショット) (通常)</p><p class="text-lg text-gray-700">¥50,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全顔 (600ショット) (初回)</p><p class="text-xl font-bold text-accent">¥49,800</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全顔 (600ショット) (通常)</p><p class="text-lg text-gray-700">¥80,000</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                },
+                'ダーマペン': {
+                    title: 'ダーマペン4の料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全顔 (初回)</p><p class="text-xl font-bold text-accent">¥11,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">全顔 (通常)</p><p class="text-lg text-gray-700">¥25,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">ヴェルベットスキン (全顔)</p><p class="text-lg text-gray-700">¥30,000</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                },
+                'レーザー': {
+                    title: 'レーザー治療の料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">レーザーシャワー (全顔) (初回)</p><p class="text-xl font-bold text-accent">¥9,800</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">レーザーシャワー (全顔) (通常)</p><p class="text-lg text-gray-700">¥20,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">ピコトーニング (全顔)</p><p class="text-lg text-gray-700">¥15,000</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                },
+                'ピーリング': {
+                    title: 'ピーリングの料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">ハイドラフェイシャル (全顔) (初回)</p><p class="text-xl font-bold text-accent">¥10,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">ハイドラフェイシャル (全顔) (通常)</p><p class="text-lg text-gray-700">¥25,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">マッサージピール</p><p class="text-lg text-gray-700">¥18,000</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                },
+                '注入': {
+                    title: '注入治療の料金プラン',
+                    content: `
+                        <div class="divide-y divide-gray-200">
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">水光注射 (ヒアルロン酸) (初回)</p><p class="text-xl font-bold text-accent">¥11,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">水光注射 (ヒアルロン酸) (通常)</p><p class="text-lg text-gray-700">¥22,000</p></div>
+                            <div class="py-3 flex justify-between items-center"><p class="text-sm md:text-base">ボツリヌストキシン (1部位)</p><p class="text-lg text-gray-700">¥9,800</p></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">※価格は全て税込です。予告なく変更される場合があります。</p>
+                    `
+                }
+            };
+    
+            // ポップアップを表示
+            const showPopup = (key) => {
+                const data = priceData[key];
+                if (data && popupWrapper && popupTitle && popupContent) {
+                    popupTitle.textContent = data.title;
+                    popupContent.innerHTML = data.content;
+                    popupWrapper.classList.add('is-show');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+    
+            // ポップアップを非表示
+            const hidePopup = () => {
+                if (popupWrapper) {
+                    popupWrapper.classList.remove('is-show');
+                    document.body.style.overflow = '';
+                }
+            };
+    
+            // ボタンクリックイベント
+            if (priceButtons.length > 0) {
+                priceButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const key = e.currentTarget.dataset.priceModal;
+                        showPopup(key);
+                    });
+                });
+            }
+    
+            // 閉じるボタン
+            if (closePopup) {
+                closePopup.addEventListener('click', hidePopup);
+            }
+    
+            // 背景クリックで閉じる
+            if (popupWrapper) {
+                popupWrapper.addEventListener('click', (e) => {
+                    if (e.target === popupWrapper) {
+                        hidePopup();
+                    }
+                });
+            }
+            
+            // Toggle function for more prices section
+            window.toggleMorePrices = function() {
+                const section = document.getElementById('morePricesSection');
+                const text = document.getElementById('morePricesText');
+                const icon = document.getElementById('morePricesIcon');
+                
+                if (section.classList.contains('hidden')) {
+                    section.classList.remove('hidden');
+                    text.textContent = '初回限定価格を閉じる';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    section.classList.add('hidden');
+                    text.textContent = 'その他の初回限定価格を見る';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            };
+            
+        });
+    </script>
+
+    <!-- Popup for Price Tables -->
+    <div class="popup-wrapper" id="pricePopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 id="popupTitle" class="popup-title">料金表</h3>
+                <button class="popup-close" id="closePopup">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="popupContent" class="popup-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

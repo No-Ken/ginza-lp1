@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医療脱毛 | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">医療脱毛</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">最新の医療レーザー脱毛機器を使用し、安全で効果的な永久脱毛を実現します。医療機関でしか扱えない高出力レーザーで、確実な脱毛効果をお約束します。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">ムダ毛の自己処理が面倒</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">カミソリ負けしやすい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">毛深いことがコンプレックス</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">背中やVIOの処理が難しい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">清潔感を保ちたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">永久脱毛を希望</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-2xl font-serif text-brown mb-6">医療脱毛の特徴</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">高い脱毛効果</h3>
+                                    <p class="text-gray-600 text-base">医療機関でしか扱えない高出力レーザーで永久脱毛が可能</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">医師による安全な施術</h3>
+                                    <p class="text-gray-600 text-base">美容皮膚科専門医の管理下で安全に施術を受けられます</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">少ない回数で完了</h3>
+                                    <p class="text-gray-600 text-base">エステ脱毛と比較して少ない回数で脱毛が完了します</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="images/23_医療脱毛.jpg" alt="医療脱毛施術" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Equipment -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">使用機器</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-3">ElitePlus（エリートプラス）</h3>
+                            <p class="text-gray-600 text-base">最新の医療レーザー脱毛機器。様々な肌質・毛質に対応可能です。</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-3">Splendor X（スプレンダーエックス）</h3>
+                            <p class="text-gray-600 text-base">高速照射が可能な最新機器。施術時間を大幅に短縮します。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- First-time Special -->
+                    <div class="bg-accent bg-opacity-5 border-2 border-accent rounded-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <span class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">初回限定</span>
+                            <h2 class="text-3xl font-serif text-brown">特別価格</h2>
+                        </div>
+                        
+                        <!-- Women's First-time Pricing -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold mb-4 text-lg bg-white inline-block px-4 py-1 rounded">女性</h4>
+                            <div class="bg-white rounded-lg p-4">
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th>部位</th>
+                                            <th class="text-accent">初回特別価格</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>全身＋顔＋VIO</td>
+                                            <td class="text-2xl font-bold text-accent">¥50,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>全身脱毛</td>
+                                            <td class="text-2xl font-bold text-accent">¥35,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VIO脱毛</td>
+                                            <td class="text-2xl font-bold text-accent">¥9,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>顔脱毛</td>
+                                            <td class="text-2xl font-bold text-accent">¥9,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ワキ脱毛</td>
+                                            <td class="text-2xl font-bold text-accent">¥3,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Men's First-time Pricing -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-lg bg-white inline-block px-4 py-1 rounded">男性</h4>
+                            <div class="bg-white rounded-lg p-4">
+                                <table class="price-table">
+                                    <thead>
+                                        <tr>
+                                            <th>部位</th>
+                                            <th class="text-accent">初回特別価格</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>全身＋顔＋VIO</td>
+                                            <td class="text-2xl font-bold text-accent">¥75,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ヒゲ脱毛（全体）</td>
+                                            <td class="text-2xl font-bold text-accent">¥12,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ヒゲ脱毛（3部位）</td>
+                                            <td class="text-2xl font-bold text-accent">¥9,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VIO脱毛</td>
+                                            <td class="text-2xl font-bold text-accent">¥14,700</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-serif text-brown text-center mb-8">通常料金</h3>
+                        
+                        <!-- Women's Regular Pricing -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold mb-4 text-lg">女性</h4>
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>部位</th>
+                                        <th>通常価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>全身＋顔＋VIO</td>
+                                        <td>¥98,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>全身脱毛</td>
+                                        <td>¥68,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VIO脱毛</td>
+                                        <td>¥28,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>顔脱毛</td>
+                                        <td>¥25,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ワキ脱毛</td>
+                                        <td>¥8,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Men's Regular Pricing -->
+                        <div>
+                            <h4 class="font-semibold mb-4 text-lg">男性</h4>
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>部位</th>
+                                        <th>通常価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>全身＋顔＋VIO</td>
+                                        <td>¥150,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ヒゲ脱毛（全体）</td>
+                                        <td>¥30,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ヒゲ脱毛（3部位）</td>
+                                        <td>¥20,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VIO脱毛</td>
+                                        <td>¥35,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Package Plans -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">お得なセットプラン</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <p class="text-center text-gray-700 mb-4">5回コース：5%OFF | 8回コース：10%OFF | 12回コース：15%OFF</p>
+                            <p class="text-sm text-gray-600 text-center">※初回限定価格からの割引は適用されません</p>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です</p>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

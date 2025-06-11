@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>クリックイベントテスト</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ページ読み込み後の確認
+            setTimeout(() => {
+                console.log('=== Click Event Test ===');
+                
+                // 1. data-price-modal属性を持つ要素を取得
+                const links = document.querySelectorAll('[data-price-modal]');
+                console.log('Links found:', links.length);
+                
+                // 2. 各リンクの情報を表示
+                links.forEach((link, index) => {
+                    console.log(`Link ${index}:`, {
+                        text: link.textContent.trim(),
+                        dataValue: link.getAttribute('data-price-modal'),
+                        hasClickEvent: link.onclick !== null,
+                        eventListeners: typeof link._listenerAttached !== 'undefined' ? link._listenerAttached : 'unknown'
+                    });
+                    
+                    // 3. テスト用のクリックイベントを追加
+                    link.addEventListener('click', function(e) {
+                        console.log(`Test click detected on link ${index}:`, this.getAttribute('data-price-modal'));
+                    });
+                });
+                
+                // 4. openModal関数の存在確認
+                console.log('openModal function exists:', typeof window.openModal === 'function');
+                
+                // 5. 最初のリンクをプログラムでクリック
+                if (links[0]) {
+                    console.log('Programmatically clicking first link...');
+                    links[0].click();
+                }
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1>クリックイベントテスト</h1>
+    <p>メインページを読み込んでコンソールを確認してください。</p>
+    <iframe src="re;anne_lp_ver1.html" width="100%" height="600"></iframe>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Link Test</title>
+</head>
+<body>
+    <h1>Simple Link Test</h1>
+    
+    <div style="margin: 20px;">
+        <h2>Test Links:</h2>
+        <ul>
+            <li><a href="medical-hair-removal.html">医療脱毛ページ</a></li>
+            <li><a href="hifu.html">ハイフページ</a></li>
+            <li><a href="exosome.html">エクソソームページ</a></li>
+            <li><a href="dermapen.html">ダーマペンページ</a></li>
+        </ul>
+    </div>
+    
+    <div style="margin: 20px;">
+        <h2>Button Style Links:</h2>
+        <a href="medical-hair-removal.html" style="display: inline-block; padding: 8px 16px; border: 1px solid #b8a398; color: #b8a398; text-decoration: none; border-radius: 4px; margin: 4px;">
+            他の脱毛メニューを確認 &rarr;
+        </a>
+        <br>
+        <a href="hifu.html" style="display: inline-block; padding: 8px 16px; border: 1px solid #b8a398; color: #b8a398; text-decoration: none; border-radius: 4px; margin: 4px;">
+            他のハイフメニューを確認 &rarr;
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded');
+            const links = document.querySelectorAll('a[href$=".html"]');
+            console.log('Found links:', links.length);
+            
+            links.forEach((link, index) => {
+                link.addEventListener('click', function(e) {
+                    console.log(`Link ${index} clicked:`, this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

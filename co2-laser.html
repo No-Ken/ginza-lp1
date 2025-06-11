@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2レーザー | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header =====  -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">CO2レーザー</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">炭酸ガスレーザーによる精密な治療。ほくろ・イボ・脂漏性角化症などを確実に除去します。傷跡が目立ちにくく、きれいな仕上がりが特徴です。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">ほくろを除去したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">イボが気になる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">盛り上がったシミがある</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">首イボを取りたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">顔の印象を変えたい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">確実に除去したい</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-2xl font-serif text-brown mb-6">CO2レーザーの特徴</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">高精度な治療</h3>
+                                    <p class="text-gray-600 text-base">ピンポイントで病変部のみを除去。周囲の正常組織へのダメージを最小限に</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">短時間の施術</h3>
+                                    <p class="text-gray-600 text-base">ほくろ1個あたり数分で完了。複数同時施術も可能</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">仕上がりがきれい</h3>
+                                    <p class="text-gray-600 text-base">適切なアフターケアで傷跡が目立ちにくい</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">確実な除去</h3>
+                                    <p class="text-gray-600 text-base">一度の施術で確実に除去。再発リスクが低い</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="images/laser_treatment.jpg" alt="CO2レーザー施術" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Treatment Targets -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">適応症状</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-sub p-6 rounded-lg text-center">
+                            <h3 class="text-lg font-semibold mb-3">ほくろ</h3>
+                            <p class="text-gray-600 text-base">平らなものから盛り上がったものまで、様々なタイプのほくろに対応</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg text-center">
+                            <h3 class="text-lg font-semibold mb-3">イボ（疣贅）</h3>
+                            <p class="text-gray-600 text-base">老人性イボ、首イボなど各種イボの除去</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg text-center">
+                            <h3 class="text-lg font-semibold mb-3">脂漏性角化症</h3>
+                            <p class="text-gray-600 text-base">加齢によるシミの一種。盛り上がったシミの除去</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h2 class="text-2xl font-serif text-brown text-center mb-8">料金表</h2>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>メニュー</th>
+                                    <th>料金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ほくろ除去（1mm未満）</td>
+                                    <td class="highlight-price">¥5,500</td>
+                                </tr>
+                                <tr>
+                                    <td>ほくろ除去（1-3mm）</td>
+                                    <td class="highlight-price">¥11,000</td>
+                                </tr>
+                                <tr>
+                                    <td>ほくろ除去（3-5mm）</td>
+                                    <td class="highlight-price">¥16,500</td>
+                                </tr>
+                                <tr>
+                                    <td>ほくろ除去（5mm以上）</td>
+                                    <td>¥22,000〜</td>
+                                </tr>
+                                <tr>
+                                    <td>イボ除去（1個）</td>
+                                    <td>¥5,500〜</td>
+                                </tr>
+                                <tr>
+                                    <td>脂漏性角化症（1個）</td>
+                                    <td>¥5,500〜</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Set Plans -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">お得なセットプラン</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>プラン</th>
+                                        <th>料金</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ほくろ除去 5個セット</td>
+                                        <td>¥44,000（20%OFF）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ほくろ除去 10個セット</td>
+                                        <td>¥77,000（30%OFF）</td>
+                                    </tr>
+                                    <tr>
+                                        <td>首イボ除去し放題（30分）</td>
+                                        <td>¥33,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Additional Costs -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">その他料金</h3>
+                        <table class="price-table">
+                            <tbody>
+                                <tr>
+                                    <td>麻酔クリーム</td>
+                                    <td>¥3,300</td>
+                                </tr>
+                                <tr>
+                                    <td>局所麻酔</td>
+                                    <td>¥3,300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です<br>※大きさや個数により料金が変動する場合があります</p>
+                </div>
+
+                <!-- Treatment Flow -->
+                <div class="mt-16">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">施術の流れ</h2>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                            <h3 class="font-semibold mb-2">診察・カウンセリング</h3>
+                            <p class="text-sm text-gray-600">医師が診察し、適応を判断</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                            <h3 class="font-semibold mb-2">麻酔</h3>
+                            <p class="text-sm text-gray-600">麻酔クリームまたは局所麻酔</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                            <h3 class="font-semibold mb-2">レーザー照射</h3>
+                            <p class="text-sm text-gray-600">CO2レーザーで除去</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                            <h3 class="font-semibold mb-2">アフターケア</h3>
+                            <p class="text-sm text-gray-600">軟膏塗布・保護テープ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

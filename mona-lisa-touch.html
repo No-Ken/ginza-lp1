@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モナリザタッチ | Re:anne Clinic 銀座</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .price-table th, .price-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .price-table th {
+            background-color: #fafafa;
+            font-weight: 600;
+        }
+        .price-table tr:hover {
+            background-color: #fafafa;
+        }
+        .highlight-price {
+            color: #b8a398;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ===== Header ===== -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="re;anne_lp_ver1.html" class="flex items-center">
+                <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-12 md:h-16 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-accent transition font-medium text-sm flex items-center">
+                        施術メニュー
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="medical-hair-removal.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">レーザー治療</a>
+                        <a href="hifu.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ダーマペン4</a>
+                        <a href="injection.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">注入治療</a>
+                        <a href="peeling.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">ピーリング</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="nmn-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">美容点滴・注射</a>
+                        <a href="exosome.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">エクソソーム</a>
+                        <hr class="my-2 border-gray-200">
+                        <a href="co2-laser.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">モナリザタッチ</a>
+                        <a href="piercing.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+            </nav>
+            
+            <!-- Reservation Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
+            <nav class="flex flex-col space-y-4">
+                <a href="re;anne_lp_ver1.html#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
+                
+                <!-- Mobile Submenu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu()" class="flex items-center justify-between w-full text-gray-700 hover:text-accent transition font-medium text-sm">
+                        施術メニュー
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-submenu" class="hidden mt-2 ml-4 space-y-2">
+                        <a href="medical-hair-removal.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療脱毛</a>
+                        <a href="laser-treatment.html" class="block text-gray-600 hover:text-accent text-sm py-1">レーザー治療</a>
+                        <a href="hifu.html" class="block text-gray-600 hover:text-accent text-sm py-1">HIFU（ハイフ）</a>
+                        <a href="dermapen.html" class="block text-gray-600 hover:text-accent text-sm py-1">ダーマペン4</a>
+                        <a href="injection.html" class="block text-gray-600 hover:text-accent text-sm py-1">注入治療</a>
+                        <a href="peeling.html" class="block text-gray-600 hover:text-accent text-sm py-1">ピーリング</a>
+                        <a href="nmn-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">NMN点滴</a>
+                        <a href="beauty-injection-drip.html" class="block text-gray-600 hover:text-accent text-sm py-1">美容点滴・注射</a>
+                        <a href="exosome.html" class="block text-gray-600 hover:text-accent text-sm py-1">エクソソーム</a>
+                        <a href="co2-laser.html" class="block text-gray-600 hover:text-accent text-sm py-1">CO2レーザー</a>
+                        <a href="mona-lisa-touch.html" class="block text-gray-600 hover:text-accent text-sm py-1">モナリザタッチ</a>
+                        <a href="piercing.html" class="block text-gray-600 hover:text-accent text-sm py-1">医療用ピアス</a>
+                    </div>
+                </div>
+                
+                <a href="re;anne_lp_ver1.html#pricing" class="text-gray-700 hover:text-accent transition font-medium text-sm">料金一覧</a>
+                <a href="re;anne_lp_ver1.html#access" class="text-gray-700 hover:text-accent transition font-medium text-sm">アクセス</a>
+                <a href="#" class="text-gray-700 hover:text-accent transition font-medium text-sm">お知らせ</a>
+                <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-12 bg-sub">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-serif text-brown text-center mb-4">モナリザタッチ</h1>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto">フラクショナルCO2レーザーによる膣・外陰部の若返り治療。更年期症状や産後の悩みを改善し、女性の生活の質（QOL）を向上させます。</p>
+            </div>
+        </section>
+
+        <!-- Recommended For Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな方におすすめ</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">更年期の症状に悩んでいる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">産後の体の変化が気になる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">膣の乾燥で悩んでいる</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">性生活の質を改善したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">尿漏れを改善したい</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+                        <p class="text-gray-700">ホルモン療法が使えない</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Details -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-2xl font-serif text-brown mb-6">モナリザタッチの特徴</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">非侵襲的な治療</h3>
+                                    <p class="text-gray-600 text-sm">メスを使わず、膣粘膜の再生を促進。痛みも少なく安全</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">短時間の施術</h3>
+                                    <p class="text-gray-600 text-sm">施術時間は約15分。日常生活への影響が最小限</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">高い改善効果</h3>
+                                    <p class="text-gray-600 text-sm">膣の潤い・弾力が改善し、様々な症状が軽減</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold mb-1">ホルモン剤不要</h3>
+                                    <p class="text-gray-600 text-sm">ホルモン補充療法が使えない方でも安心して受けられます</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden">
+                        <img src="images/laser_treatment.jpg" alt="モナリザタッチ施術" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Symptoms -->
+                <div class="mb-20">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">こんな症状にお悩みの方へ</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">膣の乾燥・萎縮</h3>
+                            <p class="text-gray-600 text-sm">更年期や産後による膣の潤い不足を改善</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">性交痛</h3>
+                            <p class="text-gray-600 text-sm">膣の弾力性を回復し、痛みを軽減</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">尿漏れ</h3>
+                            <p class="text-gray-600 text-sm">骨盤底筋群の機能改善により症状を緩和</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">膣のゆるみ</h3>
+                            <p class="text-gray-600 text-sm">出産後の膣の締まりを改善</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">繰り返す膣炎</h3>
+                            <p class="text-gray-600 text-sm">膣内環境を整え、感染リスクを低減</p>
+                        </div>
+                        <div class="bg-sub p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-3">外陰部の萎縮</h3>
+                            <p class="text-gray-600 text-sm">外陰部のハリと潤いを回復</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Section -->
+                <div id="pricing">
+                    <!-- First-time Special -->
+                    <div class="bg-accent bg-opacity-5 border-2 border-accent rounded-lg p-8 mb-8">
+                        <div class="text-center mb-8">
+                            <span class="inline-block bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold mb-3">初回限定</span>
+                            <h2 class="text-3xl font-serif text-brown">特別価格</h2>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>メニュー</th>
+                                        <th class="text-accent">初回特別価格</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>モナリザタッチ（膣内）</td>
+                                        <td class="text-2xl font-bold text-accent">¥55,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>モナリザタッチ（外陰部）</td>
+                                        <td class="text-2xl font-bold text-accent">¥33,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>モナリザタッチ（膣内＋外陰部）</td>
+                                        <td class="text-2xl font-bold text-accent">¥77,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Regular Pricing -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-serif text-brown text-center mb-8">通常料金</h3>
+                        
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>メニュー</th>
+                                    <th>通常価格</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>モナリザタッチ（膣内）</td>
+                                    <td>¥88,000</td>
+                                </tr>
+                                <tr>
+                                    <td>モナリザタッチ（外陰部）</td>
+                                    <td>¥55,000</td>
+                                </tr>
+                                <tr>
+                                    <td>モナリザタッチ（膣内＋外陰部）</td>
+                                    <td>¥121,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Package Plans -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                        <h3 class="text-xl font-semibold text-center mb-6">コースプラン</h3>
+                        <div class="bg-white p-6 rounded-lg">
+                            <table class="price-table">
+                                <thead>
+                                    <tr>
+                                        <th>コース</th>
+                                        <th>料金</th>
+                                        <th>1回あたり</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>モナリザタッチ（膣内）3回コース</td>
+                                        <td>¥220,000</td>
+                                        <td>¥73,333</td>
+                                    </tr>
+                                    <tr>
+                                        <td>モナリザタッチ（膣内）5回コース</td>
+                                        <td>¥330,000</td>
+                                        <td>¥66,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>モナリザタッチ（膣内＋外陰部）3回コース</td>
+                                        <td>¥297,000</td>
+                                        <td>¥99,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="text-base text-gray-600 text-center mt-4">※推奨：初回は3回コースで効果を実感いただけます</p>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-500 text-center mt-6">※価格は全て税込表示です</p>
+                </div>
+
+                <!-- Treatment Flow -->
+                <div class="mt-16">
+                    <h2 class="text-2xl font-serif text-brown text-center mb-8">施術の流れ</h2>
+                    <div class="grid md:grid-cols-5 gap-4">
+                        <div class="text-center">
+                            <div class="w-14 h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">1</div>
+                            <p class="text-sm text-gray-700">問診・カウンセリング</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">2</div>
+                            <p class="text-sm text-gray-700">内診・検査</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">3</div>
+                            <p class="text-sm text-gray-700">麻酔クリーム塗布</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">4</div>
+                            <p class="text-sm text-gray-700">レーザー照射（約15分）</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">5</div>
+                            <p class="text-sm text-gray-700">アフターケア説明</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-12">
+                    <a href="https://reanneclinic-ginza.b4a.clinic/" class="btn btn-primary">予約をする</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm">&copy; 2024 Re：anne clinic 銀座. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

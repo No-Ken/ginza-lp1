@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .btn-outline-sm {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #b8a398;
+            color: #b8a398;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-outline-sm:hover {
+            background-color: #b8a398;
+            color: white;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <h1 class="text-2xl mb-8">Link Test</h1>
+    
+    <div class="grid grid-cols-2 gap-4 max-w-4xl">
+        <div class="border p-4 rounded">
+            <h3>医療脱毛</h3>
+            <a href="medical-hair-removal.html" class="btn-outline-sm">他の脱毛メニューを確認 &rarr;</a>
+        </div>
+        
+        <div class="border p-4 rounded">
+            <h3>ハイフ</h3>
+            <a href="hifu.html" class="btn-outline-sm">他のハイフメニューを確認 &rarr;</a>
+        </div>
+        
+        <div class="border p-4 rounded">
+            <h3>エクソソーム</h3>
+            <a href="exosome.html" class="btn-outline-sm">他のエクソソームメニューを確認 &rarr;</a>
+        </div>
+        
+        <div class="border p-4 rounded">
+            <h3>ダーマペン</h3>
+            <a href="dermapen.html" class="btn-outline-sm">他のダーマペンメニューを確認 &rarr;</a>
+        </div>
+    </div>
+    
+    <script>
+        console.log('Test page loaded');
+        
+        // Test click handlers
+        document.querySelectorAll('a').forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                console.log(`Link ${index} clicked:`, this.href);
+                console.log('Target:', this.getAttribute('href'));
+            });
+        });
+    </script>
+</body>
+</html>
