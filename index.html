@@ -658,27 +658,12 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            // Debug: Check if elements exist
-            console.log('Mobile menu button found:', !!mobileMenuButton);
-            console.log('Mobile menu found:', !!mobileMenu);
-            
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('Menu button clicked!');
                     mobileMenu.classList.toggle('hidden');
-                    
-                    // Add visual feedback
-                    mobileMenuButton.style.opacity = '0.7';
-                    setTimeout(() => {
-                        mobileMenuButton.style.opacity = '1';
-                    }, 100);
                 });
-                
-                // Add pointer-events to ensure clickability
-                mobileMenuButton.style.pointerEvents = 'auto';
-                mobileMenuButton.style.cursor = 'pointer';
             }
     
             // Header scroll effect

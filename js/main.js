@@ -644,11 +644,13 @@ document.addEventListener('DOMContentLoaded', function() {
         closeModalBtn.addEventListener('click', closePriceModal);
     }
     
-    priceModal.addEventListener('click', function(e) {
-        if (e.target === priceModal) {
-            closePriceModal();
-        }
-    });
+    if (priceModal) {
+        priceModal.addEventListener('click', function(e) {
+            if (e.target === priceModal) {
+                closePriceModal();
+            }
+        });
+    }
     
     // ESC key to close modal
     document.addEventListener('keydown', function(e) {
