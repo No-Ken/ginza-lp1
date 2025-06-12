@@ -280,6 +280,13 @@
                     <button id="scroll-right" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-white/80 rounded-full p-2 shadow-lg hover:bg-accent hover:text-white transition hidden md:block">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
+                    
+                    <!-- Mobile Scroll Indicator -->
+                    <div id="mobile-scroll-indicator" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 text-white rounded-full p-3 md:hidden transition-opacity duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
                 </div>
 
             </div>
@@ -739,6 +746,7 @@
             const scrollContainer = document.getElementById('scroll-container');
             const scrollLeftButton = document.getElementById('scroll-left');
             const scrollRightButton = document.getElementById('scroll-right');
+            const mobileScrollIndicator = document.getElementById('mobile-scroll-indicator');
     
             if (scrollContainer && scrollLeftButton && scrollRightButton) {
                 const scrollAmount = 350;
@@ -749,6 +757,20 @@
     
                 scrollRightButton.addEventListener('click', () => {
                     scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+            
+            // Mobile scroll indicator fade out on scroll
+            if (scrollContainer && mobileScrollIndicator) {
+                let hasScrolled = false;
+                scrollContainer.addEventListener('scroll', () => {
+                    if (!hasScrolled && scrollContainer.scrollLeft > 50) {
+                        hasScrolled = true;
+                        mobileScrollIndicator.style.opacity = '0';
+                        setTimeout(() => {
+                            mobileScrollIndicator.style.display = 'none';
+                        }, 300);
+                    }
                 });
             }
     
@@ -889,6 +911,14 @@
                     section.classList.add('hidden');
                     text.textContent = 'その他の初回限定価格を見る';
                     icon.style.transform = 'rotate(0deg)';
+                }
+            };
+            
+            // Toggle mobile submenu
+            window.toggleMobileSubmenu = function() {
+                const submenu = document.getElementById('mobile-submenu');
+                if (submenu) {
+                    submenu.classList.toggle('hidden');
                 }
             };
             
