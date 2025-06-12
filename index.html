@@ -64,8 +64,8 @@
 <body class="bg-white">
 
     <!-- ===== Header ===== -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-100">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-3 flex justify-between items-center relative">
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 py-2 md:py-3 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="flex items-center">
                 <img src="images/Re;anne_logo.jpg" alt="Re:anne clinic 銀座" class="h-10 md:h-16 w-auto">
@@ -112,15 +112,13 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="lg:hidden text-gray-700 p-2 -mr-2">
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700 p-2 relative z-50">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-    </header>
 
-    <!-- Mobile Menu (Outside Header) -->
-    <div id="mobile-menu" class="fixed top-16 md:top-20 left-0 right-0 bg-white shadow-xl z-40 hidden lg:hidden overflow-y-auto max-h-[calc(100vh-4rem)]">
-        <div class="container mx-auto px-4 py-4">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white mt-4 p-4 rounded-lg shadow-xl">
             <nav class="flex flex-col space-y-4">
                 <a href="#features" class="text-gray-700 hover:text-accent transition font-medium text-sm">クリニック紹介</a>
                 
@@ -154,7 +152,7 @@
                 <a href="https://reanneclinic-ginza.b4a.clinic/" class="mt-4 btn btn-primary text-center font-bold">予約をする</a>
             </nav>
         </div>
-    </div>
+    </header>
 
     <main>
         <!-- ===== Hero Section ===== -->
@@ -659,10 +657,28 @@
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            
+            // Debug: Check if elements exist
+            console.log('Mobile menu button found:', !!mobileMenuButton);
+            console.log('Mobile menu found:', !!mobileMenu);
+            
             if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
+                mobileMenuButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Menu button clicked!');
                     mobileMenu.classList.toggle('hidden');
+                    
+                    // Add visual feedback
+                    mobileMenuButton.style.opacity = '0.7';
+                    setTimeout(() => {
+                        mobileMenuButton.style.opacity = '1';
+                    }, 100);
                 });
+                
+                // Add pointer-events to ensure clickability
+                mobileMenuButton.style.pointerEvents = 'auto';
+                mobileMenuButton.style.cursor = 'pointer';
             }
     
             // Header scroll effect
