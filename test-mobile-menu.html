@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .menu-debug {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-full z-50 py-2 px-4 bg-white border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1>Logo</h1>
+            
+            <!-- Mobile Menu Button with debug styling -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700 menu-debug p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu with debug styling -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-yellow-100 mt-4 p-4 rounded-lg shadow-xl menu-debug">
+            <nav class="flex flex-col space-y-4">
+                <a href="#" class="text-gray-700">Menu Item 1</a>
+                <a href="#" class="text-gray-700">Menu Item 2</a>
+                <a href="#" class="text-gray-700">Menu Item 3</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <div class="container mx-auto p-4">
+            <h2 class="text-2xl mb-4">Mobile Menu Debug Test</h2>
+            <p>The mobile menu button has a red border for visibility.</p>
+            <p>The mobile menu has a yellow background when visible.</p>
+            <div id="debug-output" class="mt-4 p-4 bg-gray-100"></div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const debugOutput = document.getElementById('debug-output');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            debugOutput.innerHTML = `
+                <p>Mobile Menu Button Found: ${mobileMenuButton ? 'YES' : 'NO'}</p>
+                <p>Mobile Menu Found: ${mobileMenu ? 'YES' : 'NO'}</p>
+            `;
+            
+            if (mobileMenuButton && mobileMenu) {
+                let clickCount = 0;
+                mobileMenuButton.addEventListener('click', () => {
+                    clickCount++;
+                    mobileMenu.classList.toggle('hidden');
+                    debugOutput.innerHTML += `<p>Click ${clickCount}: Menu is now ${mobileMenu.classList.contains('hidden') ? 'HIDDEN' : 'VISIBLE'}</p>`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
