@@ -686,6 +686,7 @@
                 const heroOverlay = document.getElementById('hero-overlay');
                 const heroContent = document.getElementById('hero-content');
                 const backButton = document.getElementById('back-to-original');
+                const heroSection = document.getElementById('hero');
                 
                 if (heroBackground && heroOverlay && heroContent && backButton) {
                     // Change background image with contain sizing
@@ -702,6 +703,11 @@
                     // Show back button
                     backButton.style.opacity = '1';
                     backButton.style.pointerEvents = 'auto';
+                    
+                    // Scroll to hero section to show the full image
+                    if (heroSection) {
+                        heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             };
             
