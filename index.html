@@ -156,8 +156,8 @@
 
     <main>
         <!-- ===== Hero Section ===== -->
-        <section id="hero" class="h-screen min-h-[600px] flex items-center relative pt-20">
-            <div id="hero-background" class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 opacity-90 transition-all duration-500" style="background-image: url('images/main_hero.jpg');"></div>
+        <section id="hero" class="h-screen min-h-[600px] flex items-center relative mt-20">
+            <div id="hero-background" class="absolute inset-0 bg-contain bg-center bg-no-repeat z-0 opacity-90 transition-all duration-500" style="background-image: url('images/main_hero.jpg'); background-color: #f5f5f5;"></div>
             <div id="hero-overlay" class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10 transition-opacity duration-500"></div>
             <div id="hero-content" class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 transition-opacity duration-500">
                 <div class="max-w-xl">
@@ -181,25 +181,27 @@
                     元に戻す
                 </button>
             </div>
-            
-            <!-- Campaign Images Scroll Section - Bottom of Hero -->
-            <div class="absolute bottom-24 left-0 right-0 z-30">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-3">
-                        <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold">期間限定キャンペーン</span>
-                    </div>
-                    <div class="flex overflow-x-auto space-x-3 pb-4 hide-scrollbar">
+        </section>
+
+        <!-- ===== Campaign Section ===== -->
+        <section id="campaign" class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">期間限定キャンペーン</span>
+                </div>
+                <div class="flex justify-center">
+                    <div class="flex overflow-x-auto space-x-4 pb-4 max-w-full">
                         <!-- Campaign Image 1 -->
-                        <div class="flex-shrink-0 w-56 md:w-72">
-                            <img src="images/campaign_1.jpg" alt="キャンペーン1" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_1.jpg')">
+                        <div class="flex-shrink-0">
+                            <img src="images/campaign_1.jpg" alt="キャンペーン1" class="w-64 md:w-80 h-40 md:h-48 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_1.jpg')">
                         </div>
                         <!-- Campaign Image 2 -->
-                        <div class="flex-shrink-0 w-56 md:w-72">
-                            <img src="images/campaign_2.jpg" alt="キャンペーン2" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_2.jpg')">
+                        <div class="flex-shrink-0">
+                            <img src="images/campaign_2.jpg" alt="キャンペーン2" class="w-64 md:w-80 h-40 md:h-48 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_2.jpg')">
                         </div>
                         <!-- Campaign Image 3 -->
-                        <div class="flex-shrink-0 w-56 md:w-72">
-                            <img src="images/campaign_3.jpg" alt="キャンペーン3" class="w-full h-28 md:h-36 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_3.jpg')">
+                        <div class="flex-shrink-0">
+                            <img src="images/campaign_3.jpg" alt="キャンペーン3" class="w-64 md:w-80 h-40 md:h-48 object-contain rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow" onclick="switchHeroBackground('images/campaign_3.jpg')">
                         </div>
                     </div>
                 </div>
@@ -712,7 +714,7 @@
                 if (heroBackground && heroOverlay && heroContent && backButton) {
                     // Reset to original background with cover sizing
                     heroBackground.style.backgroundImage = "url('images/main_hero.jpg')";
-                    heroBackground.style.backgroundSize = 'cover';
+                    heroBackground.style.backgroundSize = 'contain';
                     heroBackground.style.backgroundRepeat = 'no-repeat';
                     heroBackground.style.backgroundPosition = 'center';
                     
